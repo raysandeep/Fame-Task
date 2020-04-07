@@ -55,7 +55,7 @@ function login() {
     }
     console.log(data);
     var xhr = new XMLHttpRequest();
-    xhr.open("POST", "http://127.0.0.1:8000/auth/token/login", true);
+    xhr.open("POST", "https://fame-task.herokuapp.com/auth/token/login", true);
     xhr.setRequestHeader('Content-Type', 'application/json');
     xhr.send(JSON.stringify(data));
     xhr.onload = function () {
@@ -79,7 +79,7 @@ function login() {
 function checkUserType(){
     var xhr = new XMLHttpRequest();
     var storedToken = sessionStorage.getItem('TOKEN');
-    xhr.open("GET", "http://127.0.0.1:8000/api/user/", true);
+    xhr.open("GET", "https://fame-task.herokuapp.com/api/user/", true);
     xhr.setRequestHeader('Authorization', storedToken);
     xhr.setRequestHeader('Content-Type', 'application/json');
     xhr.send();
@@ -114,7 +114,7 @@ function getStudents(){
     checkTeacher();
     var xhr = new XMLHttpRequest();
     var storedToken = sessionStorage.getItem('TOKEN');
-    xhr.open("GET", "http://127.0.0.1:8000/api/student/", true);
+    xhr.open("GET", "https://fame-task.herokuapp.com/api/student/", true);
     xhr.setRequestHeader('Authorization', storedToken);
     xhr.setRequestHeader('Content-Type', 'application/json');
     xhr.send();
@@ -163,7 +163,7 @@ function registerStudent(){
     console.log(data);
     var xhr = new XMLHttpRequest();
     var storedToken = sessionStorage.getItem('TOKEN');
-    xhr.open("POST", "http://127.0.0.1:8000/api/student/", true);
+    xhr.open("POST", "https://fame-task.herokuapp.com/api/student/", true);
     xhr.setRequestHeader('Authorization', storedToken);
     xhr.setRequestHeader('Content-Type', 'application/json');
     xhr.send(JSON.stringify(data));
@@ -187,7 +187,7 @@ function getStudentsAttendance(){
     checkTeacher();
     var xhr = new XMLHttpRequest();
     var storedToken = sessionStorage.getItem('TOKEN');
-    xhr.open("GET", "http://127.0.0.1:8000/api/student/", true);
+    xhr.open("GET", "https://fame-task.herokuapp.com/api/student/", true);
     xhr.setRequestHeader('Authorization', storedToken);
     xhr.setRequestHeader('Content-Type', 'application/json');
     xhr.send();
@@ -226,7 +226,7 @@ function getDataReady(){
     var mylist=[];
     var xhr = new XMLHttpRequest();
     var storedToken = sessionStorage.getItem('TOKEN');
-    xhr.open("GET", "http://127.0.0.1:8000/api/student/", true);
+    xhr.open("GET", "https://fame-task.herokuapp.com/api/student/", true);
     xhr.setRequestHeader('Authorization', storedToken);
     xhr.setRequestHeader('Content-Type', 'application/json');
     xhr.send();
@@ -261,7 +261,7 @@ function post_attendance(data){
     console.log(final_data);
     var xhr = new XMLHttpRequest();
     var storedToken = sessionStorage.getItem('TOKEN');
-    xhr.open("POST", "http://127.0.0.1:8000/api/attendance/", true);
+    xhr.open("POST", "https://fame-task.herokuapp.com/api/attendance/", true);
     xhr.setRequestHeader('Authorization', storedToken);
     xhr.setRequestHeader('Content-Type', 'application/json');
     xhr.send(JSON.stringify(final_data));
@@ -292,7 +292,7 @@ function getStudentView(){
     checkStudent();
     var xhr = new XMLHttpRequest();
     var storedToken = sessionStorage.getItem('TOKEN');
-    xhr.open("GET", "http://127.0.0.1:8000/api/student/view/", true);
+    xhr.open("GET", "https://fame-task.herokuapp.com/api/student/view/", true);
     xhr.setRequestHeader('Authorization', storedToken);
     xhr.setRequestHeader('Content-Type', 'application/json');
     xhr.send();
