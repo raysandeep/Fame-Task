@@ -238,7 +238,7 @@ function getDataReady(){
             console.log(data);
             for (var i = 0; i < data.length; i++) {
                 if(document.getElementById(data[i].uuid).value=="Present"){
-                    mylist.push(data[i].id);
+                    mylist.push(data[i].uuid);
                 }
                 
             }
