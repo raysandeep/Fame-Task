@@ -68,7 +68,7 @@ class AttendanceHandlerView(APIView):
     permission_classes = [permissions.IsAuthenticated]
     def post(self,request):
         for i in request.data['students']:
-            student = StudentRoot.objects.filter(id=i)[0]
+            student = StudentRoot.objects.filter(uuid=i)[0]
             atten = AttendanceHandler(user=student,status=True)
             atten.save()
         return Response({
