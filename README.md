@@ -1,2 +1,2 @@
-# Fame-Task
-A backend intership task. 
+# Sandeep-Fame
+Frontend for student management
