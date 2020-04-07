@@ -203,7 +203,7 @@ function getStudentsAttendance(){
                 $(tr).append("<td>" + data[i].grade + "</td>");
                 $(tr).append("<td>" + data[i].user.first_name+' '+data[i].user.last_name + "</td>");
                 $(tr).append("<td>" + data[i].user.username + "</td>");
-                $(tr).append("<td> <div class=\"select-group\"><select id=\""+ data[i].id +"\" name=\"markAtt\" required class=\"form-control\">\
+                $(tr).append("<td> <div class=\"select-group\"><select id=\""+ data[i].uuid +"\" name=\"markAtt\" required class=\"form-control\">\
                 <option selected disabled>-----------</option><option value=\"absent\">Absent</option><option value=\"Present\">Present</option>\
                 </select></div></td>");
                 $('#student').append(tr);
@@ -237,7 +237,7 @@ function getDataReady(){
             var data = JSON.parse(this.responseText);
             console.log(data);
             for (var i = 0; i < data.length; i++) {
-                if(document.getElementById(data[i].id).value=="Present"){
+                if(document.getElementById(data[i].uuid).value=="Present"){
                     mylist.push(data[i].id);
                 }
                 
